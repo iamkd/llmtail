@@ -7,7 +7,12 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**"]
+    "includes": [
+      "packages/**/src/**",
+      "**/tsconfig.json",
+      "**/biome.json",
+      "**/package.json"
+    ]
   },
   "formatter": {
     "enabled": true,

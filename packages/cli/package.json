@@ -1,10 +1,13 @@
 {
-  "name": "@llmtail/core",
+  "name": "@llmtail/cli",
   "version": "0.1.0",
-  "description": "LLMTail core: server, piping and log writing",
+  "description": "LLMTail cli: wrapper around core, running the server and writing the logs",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
     "watch": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --watch"
+  },
+  "bin": {
+    "llmtail": "./dist/index.js"
   },
   "keywords": [
     "llm",
@@ -42,17 +45,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/body-parser": "^1.19.6",
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.3",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^24.0.13"
   },
   "dependencies": {
-    "body-parser": "^2.2.0",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
-    "fs-extra": "^11.3.0",
-    "strip-ansi": "^7.1.0"
+    "@llmtail/core": "workspace:^",
+    "chalk": "^5.4.1",
+    "commander": "^14.0.0",
+    "fs-extra": "^11.3.0"
   }
 }

@@ -32,6 +32,8 @@ export function patchConsole({ port = 6284 }: PatchConsoleOptions = {}) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          source: "browser",
+          url: window.location.href,
           method,
           args,
         }),

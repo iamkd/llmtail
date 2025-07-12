@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "LLMTail browser functionality",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist"
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
+    "watch": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --watch"
   },
   "keywords": [
     "llm",
