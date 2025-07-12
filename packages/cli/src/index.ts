@@ -12,7 +12,7 @@ program
   .description(
     "Collect logs from any process and browser console, save them to a file, and make your LLM agent tail them when needed.",
   )
-  .version("0.1.0");
+  .version("0.1.1");
 
 program
   .command("start")

@@ -1,7 +1,7 @@
 {
   "name": "@llmtail/cli",
-  "version": "0.1.0",
-  "description": "LLMTail cli: wrapper around core, running the server and writing the logs",
+  "version": "0.1.1",
+  "description": "LLMTail CLI: wrapper around @llmtail/core, running the server and writing the logs",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
     "watch": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --watch"
@@ -29,7 +29,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public"
