@@ -1,0 +1,50 @@
+{
+  "name": "@llmtail/core",
+  "version": "0.1.0",
+  "description": "LLMTail core: server, piping and log writing",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist"
+  },
+  "keywords": [
+    "llm",
+    "claude code",
+    "logs",
+    "tail",
+    "devtools"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Danyil Karuna <daniel@karuna.dev>",
+  "packageManager": "pnpm@10.13.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamkd/llmtail"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.0.13"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0"
+  }
+}
