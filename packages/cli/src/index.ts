@@ -2,9 +2,10 @@
 
 import { spawn } from "node:child_process";
 import { startServer } from "@llmtail/core";
-import chalk from "chalk";
+import { Chalk } from "chalk";
 import { Command } from "commander";
 
+const chalk = new Chalk();
 const program = new Command();
 
 program

@@ -3,8 +3,8 @@
   "version": "0.1.1",
   "description": "LLMTail browser functionality",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
-    "watch": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --watch"
+    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --sourcemap",
+    "watch": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --watch --sourcemap"
   },
   "keywords": [
     "llm",
@@ -41,5 +41,8 @@
     "type": "git",
     "url": "https://github.com/iamkd/llmtail"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "safe-stable-stringify": "^2.5.0"
+  }
 }

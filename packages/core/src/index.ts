@@ -56,9 +56,13 @@ export function startServer({
   server.post("/console", bodyParser.json(), (req, res) => {
     const { body } = req;
 
-    if (body?.method && Array.isArray(body?.args)) {
-      writeLog({ source: "browser", method: body.method, args: body.args });
-      return res.status(200).json({ success: true });
+    const arrayBody = Array.isArray(body) ? body : [body];
+
+    for (const item of arrayBody) {
+      if (item?.method && Array.isArray(item?.args)) {
+        writeLog({ source: "browser", method: item.method, args: item.args });
+        return res.status(200).json({ success: true });
+      }
     }
 
     return res

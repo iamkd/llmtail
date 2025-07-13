@@ -3,8 +3,8 @@
   "version": "0.1.1",
   "description": "LLMTail CLI: wrapper around @llmtail/core, running the server and writing the logs",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist",
-    "watch": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --watch"
+    "build": "tsup src/index.ts --format cjs --dts --out-dir dist --sourcemap",
+    "watch": "tsup src/index.ts --format cjs --dts --out-dir dist --watch --sourcemap"
   },
   "bin": {
     "llmtail": "./dist/index.js"
@@ -19,14 +19,11 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "default": "./dist/index.mjs"
+      "require": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
