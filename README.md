@@ -53,12 +53,12 @@ Inspired by Armin Ronacher's talk: https://www.youtube.com/watch?v=nfOVgz_omlU.
     ```markdown
     ## Debugging
   
-    When running a development server, both server and browser logs are aggregated into a single file located at `./my.log`. After each change or if you need to debug the app, use `tail` to view a unified log file available at `./my.log`.  
+    When running a development server, both server and browser logs are aggregated into a single file located at `./my.log`. After each change, use `tail` to view a unified log file available at `./my.log`. Combine `tail` with `grep` to filter logs by keywords, such as `error` or `info`. To debug your changes, add `console.log` statements in your code, and then use `tail` with `grep` to view your own logs.
     ```
 
 ## TODO
 
-- [ ] Support port configuration
+- [x] Support port configuration
 - [ ] Allow configuring the log format and filter out the noise
 - [ ] Add a custom `tail` utility to better select logs (e.g. after a specific timestamp, or filter by log level)
 - [ ] Multi-process support (run `llmtail` for many processes and merge logs)

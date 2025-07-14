@@ -1,10 +1,10 @@
 {
   "name": "@llmtail/browser",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "LLMTail browser functionality",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --sourcemap",
-    "watch": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --watch --sourcemap"
+    "build": "tsup src/index.ts --format esm,cjs,iife --dts --out-dir dist --sourcemap --global-name LLMTail",
+    "watch": "tsup src/index.ts --format esm,cjs,iife --dts --out-dir dist --watch --sourcemap --global-name LLMTail"
   },
   "keywords": [
     "llm",
@@ -20,7 +20,10 @@
       "require": "./dist/index.js",
       "default": "./dist/index.mjs"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./global": {
+      "default": "./dist/index.global.js"
+    }
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

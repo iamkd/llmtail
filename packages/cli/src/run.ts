@@ -12,13 +12,13 @@ program
   .description(
     "Collect logs from any process and browser console, save them to a file, and make your LLM agent tail them when needed.",
   )
-  .version("0.1.1");
+  .version("0.2.0");
 
 program
   .command("start")
   .argument("[command...]", "Command to run")
   .description("Start the llmtail server and log the child process output")
-  .option("-o, --output <file>", "Log output file path", "./llmtail.log")
+  .option("-o, --output [file]", "Log output file path", "./llmtail.log")
   .option("-p, --port [port]", "Port to run the server on", "6284")
   .option(
     "-h, --hostname [hostname]",
