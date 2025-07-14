@@ -1,4 +1,5 @@
 import { dirname } from "node:path";
+import { inspect } from "node:util";
 import bodyParser from "body-parser";
 import cors from "cors";
 import express from "express";
@@ -43,7 +44,7 @@ export async function startServer({
       return arg;
     });
     output.write(
-      `${JSON.stringify({ timestamp: Date.now(), source, method, args: transformedArgs })}\n`,
+      `${inspect({ timestamp: Date.now(), source, method, args: transformedArgs }, { colors: false, breakLength: Number.POSITIVE_INFINITY })}\n`,
     );
   }
 
@@ -53,19 +54,15 @@ export async function startServer({
 
   server.post("/console", bodyParser.json(), (req, res) => {
     const { body } = req;
-
     const arrayBody = Array.isArray(body) ? body : [body];
 
     for (const item of arrayBody) {
       if (item?.method && Array.isArray(item?.args)) {
         writeLog({ source: "browser", method: item.method, args: item.args });
-        return res.status(200).json({ success: true });
       }
     }
 
-    return res
-      .status(400)
-      .json({ success: false, error: "Invalid request body" });
+    return res.status(200).json({ success: true });
   });
 
   try {

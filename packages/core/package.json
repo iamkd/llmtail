@@ -1,6 +1,6 @@
 {
   "name": "@llmtail/core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "LLMTail core: server, piping and log writing",
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --out-dir dist --sourcemap",

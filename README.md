@@ -41,6 +41,15 @@ Inspired by Armin Ronacher's talk: https://www.youtube.com/watch?v=nfOVgz_omlU.
 
 3. (Optional, but recommended) Add the browser script to your app (depending on your setup, you might need to adjust the code):
 
+   A nicer option is to add the script to the `<head>` of your HTML file so that logs are captured from the very beginning:
+   ```html
+   <head>
+     <script src="https://unpkg.com/@llmtail/browser@latest/global"></script>
+     <script>LLMTail.patchConsole();</script>
+   </head>
+   ```
+   Another option is to import the script in your entry file (e.g. `index.tsx` or `App.tsx`), but this will only capture logs after the app is loaded:
+  
    ```tsx
     import { patchConsole } from "@llmtail/browser";
 
