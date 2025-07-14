@@ -20,12 +20,10 @@ type WriteLogArgs = {
   method: string;
 };
 
-export function startServer({
+export async function startServer({
   hostname = "localhost",
   port = 6284,
   logFilePath = "./llmtail.log",
-  onError,
-  onReady,
 }: StartServerOptions = {}) {
   // Ensure output directory exists
   const outputDir = dirname(logFilePath);
@@ -70,19 +68,32 @@ export function startServer({
       .json({ success: false, error: "Invalid request body" });
   });
 
-  const app = server.listen(port, hostname, (error) => {
-    if (error) {
+  try {
+    const app = await new Promise<ReturnType<typeof server.listen>>(
+      (resolve, reject) => {
+        const result = server.listen(port, hostname);
+
+        result.on("error", (err) => {
+          reject(err);
+        });
+
+        result.on("listening", () => {
+          resolve(result);
+        });
+      },
+    );
+
+    const closeServer = () => {
       output.end();
-      onError?.(error);
-    } else {
-      onReady?.({ hostname, port });
-    }
-  });
+      app.close();
+    };
 
-  function closeServer() {
-    app.close();
+    return {
+      writeLog,
+      closeServer,
+    };
+  } catch (error) {
     output.end();
+    throw error;
   }
-
-  return { writeLog, closeServer };
 }

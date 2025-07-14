@@ -3,11 +3,11 @@
   "version": "0.1.1",
   "description": "LLMTail CLI: wrapper around @llmtail/core, running the server and writing the logs",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs --dts --out-dir dist --sourcemap",
+    "build": "tsup src/index.ts src/startChildCommandWithServer.ts --format cjs --dts --out-dir dist --sourcemap",
     "watch": "tsup src/index.ts --format cjs --dts --out-dir dist --watch --sourcemap"
   },
   "bin": {
-    "llmtail": "./dist/index.js"
+    "llmtail": "./dist/run.js"
   },
   "keywords": [
     "llm",

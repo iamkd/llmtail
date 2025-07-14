@@ -13,7 +13,6 @@
     "sourceMap": true,
 
     "declaration": true,
-    "composite": true,
     "declarationMap": true,
 
     "strict": true,

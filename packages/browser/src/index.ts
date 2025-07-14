@@ -121,13 +121,13 @@ export function patchConsole({
   endpoint,
   port = 6284,
   retryAttempts = 3,
-  retryInterval = 1_000,
+  retryInterval = 500,
   disabled = false,
   maxDepth = 5,
   maxStringLength = 10_000,
-  flushInterval = 1_000,
+  flushInterval = 500,
   batchSize = 20,
-}: PatchConsoleOptions = {}): (() => void) | void {
+}: PatchConsoleOptions = {}): (() => void) | undefined {
   if (disabled || typeof window === "undefined") return;
 
   const state = getState();
