@@ -5,6 +5,13 @@ Combine browser and server logs into a single LLM-friendly format. Feed it into 
 > [!WARNING]
 > This is an early prototype I wrote during a weekend. It might not work for your project setup or at all.
 
+| Package                                                                                                                                                                          | Description                                                           |
+| -------------                                                                                                                                                                        | --------------                                                                     |
+| <a href="https://www.npmjs.com/package/@llmtail/cli"><img src="https://img.shields.io/npm/v/%40llmtail%2Fcli?label=%40llmtail%2Fcli" alt="LLMTail CLI on npm" /></a>                 | CLI Tool for capturing logs from your development server and browser. |
+| <a href="https://www.npmjs.com/package/@llmtail/browser"><img src="https://img.shields.io/npm/v/%40llmtail%2Fbrowser?label=%40llmtail%2Fbrowser" alt="LLMTail Browser on npm" /></a> | Browser script for capturing logs from the browser.                   |
+| <a href="https://www.npmjs.com/package/@llmtail/core"><img src="https://img.shields.io/npm/v/%40llmtail%2Fcore?label=%40llmtail%2Fcore" alt="LLMTail Core on npm" /></a>             | Core library that starts the server and writes the logs.              |
+
+
 ## Why?
 
 *Hypothesis*: allowing agents like Claude Code to `tail` through simple, informative, and well-structured logs will improve their ability to debug their own changes and iterate on them.
