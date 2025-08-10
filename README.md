@@ -3,7 +3,7 @@
 Combine browser and server logs into a single LLM-friendly format. Feed it into Claude Code so it can understand your app's behavior.
 
 > [!WARNING]
-> This is an early prototype I wrote during a weekend. It might not work for your project setup or at all.
+> This is an early prototype that got killed by Cluade Code itself after a few weeks. It now supports starting servers from within itself and tapping into CLI outputs.
 
 | Package                                                                                                                                                                          | Description                                                           |
 | -------------                                                                                                                                                                        | --------------                                                                     |
